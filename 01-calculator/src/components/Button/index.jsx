@@ -1,11 +1,7 @@
 import styles from './button.module.css';
 
-export const Button = ({ children: char }) => (
-    <button className={styles.container}>
-        {formatChar(char)}
+export const Button = ({ label, onclick }) => (
+    <button onClick={() => onclick(label)} className={styles.container}>
+        {label}
     </button>
 )
-
-function formatChar(char) {
-    return (char.length > 3 ? char.substr(0, 3) : char).toUpperCase();
-}

@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    padding: 10px;
+
+    background-color: rgba(0, 0, 0, .05);
+    text-align: right;
+
+    background-color: transparent;
+}
+
+.result {
+    color: var(--display-result-text);
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.history {}
