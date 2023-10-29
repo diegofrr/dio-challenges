@@ -1,10 +1,15 @@
 import styles from './App.module.css';
 
-function App() {
+const App = () => {
   return (
-    <main className={styles.main}>
-      Hello word!
-    </main>
+    <div className={styles.container}>
+
+      <div className={styles.content}>
+
+        Testando font-size
+      </div>
+
+    </div>
   );
 }
 
