@@ -2,24 +2,64 @@
     background-color: var(--primary-color);
     box-shadow: var(--box-shadow);
     border-radius: 10px;
-    width: calc(100% - 20px);
-    max-width: 280px;
-    padding: 40px 20px;
-
-    height: 200px;
+    max-width: calc(100% - 20px);
+    padding: 20px;
 }
 
 .content {
     width: 100%;
     height: 100%;
-
 }
 
 .buttons-container {
     width: 100%;
     margin-top: 20px;
+    position: relative;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 4px;
+}
+
+.header-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    & Button {
+        background-color: var(--button-header-bg);
+    }
+}
+
+.digit-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 200px;
+
+    @media (max-width: 480px) {
+        max-width: 140px;
+    }
+
+    & :last-child {
+        min-width: 100%;
+    }
+}
+
+.submit-button {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    height: calc(100% - 70px);
+
+    @media (max-width: 480px) {
+        top: 50px;
+        height: calc(100% - 50px);
+    }
+
+    & Button {
+        min-height: 100%;
+        background-color: var(--button-submit-bg);
+        color: #FFF;
+    }
 }

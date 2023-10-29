@@ -2,7 +2,7 @@ import styles from './calculator.module.css';
 
 import { Button } from '../Button';
 import { Display } from '../Display';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export const Calculator = () => {
     const [result, setResult] = useState(0);
@@ -35,24 +35,33 @@ export const Calculator = () => {
             <div className={styles.content}>
                 <Display result={result} />
                 <div className={styles['buttons-container']}>
-                    <Button onclick={addLabel} label='1' />
-                    <Button onclick={addLabel} label='2' />
-                    <Button onclick={addLabel} label='3' />
-                    <Button onclick={addLabel} label='4' />
-                    <Button onclick={addLabel} label='5' />
-                    <Button onclick={addLabel} label='6' />
-                    <Button onclick={addLabel} label='7' />
-                    <Button onclick={addLabel} label='8' />
-                    <Button onclick={addLabel} label='9' />
-                    <Button onclick={addLabel} label='0' />
-                    <Button onclick={addLabel} label='.' />
 
-                    <Button onclick={addLabel} label='+' />
-                    <Button onclick={addLabel} label='x' />
+                    <div className={styles['header-buttons']}>
+                        <Button onclick={addLabel} label='x' />
+                        <Button onclick={addLabel} label='%' />
+                        <Button onclick={clear} label='C' />
+                        <Button onclick={erase} label='CE' />
+                    </div>
 
-                    <Button onclick={handleSubmit} label='=' />
-                    <Button onclick={clear} label='C' />
-                    <Button onclick={erase} label='CE' />
+                    <div className={styles['digit-buttons']}>
+                        <Button onclick={addLabel} label='1' />
+                        <Button onclick={addLabel} label='2' />
+                        <Button onclick={addLabel} label='3' />
+                        <Button onclick={addLabel} label='4' />
+                        <Button onclick={addLabel} label='5' />
+                        <Button onclick={addLabel} label='6' />
+                        <Button onclick={addLabel} label='7' />
+                        <Button onclick={addLabel} label='8' />
+                        <Button onclick={addLabel} label='9' />
+                        <Button onclick={addLabel} label='0' />
+                        <Button onclick={addLabel} label='.' />
+                        <Button onclick={addLabel} label='+' />
+                        <Button onclick={addLabel} label='-' />
+                    </div>
+
+                    <div className={styles['submit-button']}>
+                        <Button onclick={handleSubmit} label='=' />
+                    </div>
                 </div>
             </div>
         </div>
