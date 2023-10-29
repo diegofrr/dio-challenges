@@ -40,12 +40,17 @@ export const Calculator = () => {
                     <Button onclick={addLabel} label='3' />
                     <Button onclick={addLabel} label='4' />
                     <Button onclick={addLabel} label='5' />
-
+                    <Button onclick={addLabel} label='6' />
+                    <Button onclick={addLabel} label='7' />
+                    <Button onclick={addLabel} label='8' />
+                    <Button onclick={addLabel} label='9' />
+                    <Button onclick={addLabel} label='0' />
+                    <Button onclick={addLabel} label='.' />
 
                     <Button onclick={addLabel} label='+' />
                     <Button onclick={addLabel} label='x' />
 
-                    <Button onclick={handleSubmit} />
+                    <Button onclick={handleSubmit} label='=' />
                     <Button onclick={clear} label='C' />
                     <Button onclick={erase} label='CE' />
                 </div>
