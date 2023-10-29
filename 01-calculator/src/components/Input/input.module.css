@@ -1,0 +1,9 @@
+.input {
+    outline: 2px solid black;
+
+    &::focus {
+        background-color: none;
+        outline: none;
+        box-shadow: none;
+    }
+}
