@@ -4,12 +4,20 @@
     --secundary-color: red;
 
     --button-primary-bg: #f0f1f2;
-    --button-submit-bg: #20ceb2;
-    --button-header-bg: #d3dde5;
     --button-text-color: #697887;
     --button-text-weight: 700;
     --button--hover-bg: #defae6;
     --button--hover-text: #789b82;
+
+    --button-header-bg: #d3dde5;
+    --button-header-text: #697887;
+    --button-header-bg--hover: #bdc8d1;
+    --button-header-text--hover: #5c6a79;
+
+    --button-submit-bg: #20ceb2;
+    --button-submit-text: #FFFFFF;
+    --button-submit-bg--hover: #17aa92;
+    --button-submit-text--hover: #FFFFFF;
 
     --display-result-text: #505d69;
 
