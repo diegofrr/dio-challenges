@@ -18,17 +18,13 @@
 
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 10px;
 }
 
 .header-buttons {
     display: flex;
     flex-direction: row;
     gap: 10px;
-
-    & Button {
-        background-color: var(--button-header-bg);
-    }
 }
 
 .digit-buttons {
@@ -40,26 +36,25 @@
     @media (max-width: 480px) {
         max-width: 140px;
     }
-
-    & :last-child {
-        min-width: 100%;
-    }
 }
 
-.submit-button {
+.side-buttons {
     position: absolute;
     right: 0;
     top: 70px;
     height: calc(100% - 70px);
 
-    @media (max-width: 480px) {
-        top: 50px;
-        height: calc(100% - 50px);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr) 2fr;
+    grid-row-gap: 10px;
+
+    & :last-child {
+        min-height: 100%;
     }
 
-    & Button {
-        min-height: 100%;
-        background-color: var(--button-submit-bg);
-        color: #FFF;
+    @media (max-width: 480px) {
+        height: calc(100% - 50px);
+        top: 50px;
     }
 }

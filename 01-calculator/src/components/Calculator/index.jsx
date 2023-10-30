@@ -4,30 +4,53 @@ import { Button } from '../Button';
 import { Display } from '../Display';
 import { useState } from 'react';
 
+const OPERATIONS = ['+', '-', '/', 'x']
+
 export const Calculator = () => {
     const [result, setResult] = useState(0);
+    const [submitted, setSubmitted] = useState(false);
 
-    const addLabel = (label) => {
-        setResult(result === 0 ? label : result + label);
+    const addLabel = label => {
+        if (!result.length && (isOperation(label) || isComma(label))) return;
+        else if (isOperation(label) && lastIsOperation()) {
+            return setResult(result.slice(0, -1) + label)
+        }
+
+        if (submitted) clear(label);
+        else setResult(result === 0 ? label : result + label);
     }
 
     const handleSubmit = () => {
         // eslint-disable-next-line no-eval
         setResult(eval(formatResult(result)));
+        setSubmitted(true);
     }
 
-    const clear = () => {
-        setResult(0);
+    const clear = (initValue) => {
+        setResult(initValue | 0);
+        setSubmitted(false);
     }
 
     const erase = () => {
         const _result = `${result}`.substring(0, result.length - 1);
         if (!_result.length) clear();
-        else setResult(_result)
+        else setResult(_result);
     }
 
-    const formatResult = (result) => {
+    const isOperation = label => {
+        return OPERATIONS.includes(label);
+    }
+
+    const lastIsOperation = () => {
+        return isOperation(result[result.length - 1]);
+    }
+
+    const formatResult = result => {
         return result.toString().replace('x', '*').replace('%', '*')
+    }
+
+    const isComma = label => {
+        return label === '.';
     }
 
     return (
@@ -37,10 +60,10 @@ export const Calculator = () => {
                 <div className={styles['buttons-container']}>
 
                     <div className={styles['header-buttons']}>
-                        <Button onclick={addLabel} label='x' />
-                        <Button onclick={addLabel} label='%' />
-                        <Button onclick={clear} label='C' />
-                        <Button onclick={erase} label='CE' />
+                        <Button hl onclick={addLabel} label='x' />
+                        <Button hl onclick={addLabel} label='/' />
+                        <Button hl onclick={clear} label='C' />
+                        <Button hl onclick={erase} label='CE' />
                     </div>
 
                     <div className={styles['digit-buttons']}>
@@ -53,15 +76,16 @@ export const Calculator = () => {
                         <Button onclick={addLabel} label='7' />
                         <Button onclick={addLabel} label='8' />
                         <Button onclick={addLabel} label='9' />
-                        <Button onclick={addLabel} label='0' />
-                        <Button onclick={addLabel} label='.' />
-                        <Button onclick={addLabel} label='+' />
-                        <Button onclick={addLabel} label='-' />
+                        <Button zero onclick={addLabel} label='0' />
+                        <Button hl onclick={addLabel} label='.' />
                     </div>
 
-                    <div className={styles['submit-button']}>
-                        <Button onclick={handleSubmit} label='=' />
+                    <div className={styles['side-buttons']}>
+                        <Button hl onclick={addLabel} label='+' />
+                        <Button hl onclick={addLabel} label='-' />
+                        <Button isSubmit onclick={handleSubmit} label='=' />
                     </div>
+
                 </div>
             </div>
         </div>
