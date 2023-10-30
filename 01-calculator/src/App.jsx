@@ -1,4 +1,5 @@
 import styles from './App.module.css';
+
 import { Calculator } from './components/Calculator';
 
 const App = () => {

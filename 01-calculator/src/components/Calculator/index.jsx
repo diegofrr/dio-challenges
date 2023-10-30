@@ -1,8 +1,9 @@
 import styles from './calculator.module.css';
 
+import { useState } from 'react';
+
 import { Button } from './Button';
 import { Display } from './Display';
-import { useState } from 'react';
 
 const OPERATIONS = ['+', '-', '/', 'x'];
 const MAX_LABELS = 12;

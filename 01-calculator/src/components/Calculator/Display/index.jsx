@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
 import styles from './display.module.css';
+
+import { useEffect } from 'react';
 
 export const Display = ({ result }) => {
     useEffect(() => {
