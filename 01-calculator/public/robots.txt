@@ -1,3 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
+# https://github.com/diegofrr
+# https://instagram.com/diegofrr_
 User-agent: *
 Disallow:
