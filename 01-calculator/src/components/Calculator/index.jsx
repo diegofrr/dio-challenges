@@ -32,7 +32,7 @@ export const Calculator = () => {
         // eslint-disable-next-line no-eval
         let _result = Number(eval(formatResult(result)));
         _result = Number.isInteger(_result) ? _result : _result.toPrecision(6)
-        setResult(_result);
+        setResult(Number(_result).toFixed(3));
     }
 
     const clear = (initValue) => {
