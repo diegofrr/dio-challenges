@@ -19,6 +19,11 @@
     --button-submit-bg--hover: #17aa92;
     --button-submit-text--hover: #FFFFFF;
 
+    --button-clear-bg: #fdb3b3;
+    --button-clear-text: #FFFFFF;
+    --button-clear-bg--hover: #f89494;
+    --button-clear-text--hover: #FFFFFF;
+
     --display-result-text: #505d69;
 
     --box-shadow: 0 0 20px -10px #999;

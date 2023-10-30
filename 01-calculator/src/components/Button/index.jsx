@@ -7,6 +7,7 @@ export const Button = (props) => (
                 ${styles.container}
                 ${props.isSubmit ? styles.submit : ''}
                 ${props.hl ? styles.highlight : ''}
+                ${props.clear ? styles.clear : ''}
                 ${props.zero ? styles['zero-button'] : ''}
             `}>
         {props.label}

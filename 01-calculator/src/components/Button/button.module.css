@@ -57,6 +57,17 @@
         color: var(--button-header-text--hover);
         background-color: var(--button-header-bg--hover);
     }
+
+}
+
+.clear {
+    background-color: var(--button-clear-bg);
+    color: var(--button-clear-text);
+
+    &:hover {
+        background-color: var(--button-clear-bg--hover);
+        color: var(--button-clear-text--hover);
+    }
 }
 
 .zero-button {
