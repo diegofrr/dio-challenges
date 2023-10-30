@@ -35,3 +35,35 @@
         max-height: 40px;
     }
 }
+
+.submit {
+    background-color: var(--button-submit-bg);
+    color: var(--button-submit-text);
+    font-weight: var(--button-text-weight);
+    font-size: 1em;
+    font-weight: 700;
+
+    &:hover {
+        background-color: var(--button-submit-bg--hover);
+        color: var(--button-submit-text--hover);
+    }
+}
+
+.highlight {
+    background-color: var(--button-header-bg);
+    color: var(--button-header-text);
+
+    &:hover {
+        color: var(--button-header-text--hover);
+        background-color: var(--button-header-bg--hover);
+    }
+}
+
+.zero-button {
+    min-width: calc(100% - 70px);
+
+    @media (max-width: 480px) {
+        min-width: calc(100% - 50px);
+    }
+
+}
