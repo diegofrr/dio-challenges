@@ -1,7 +1,7 @@
 import styles from './calculator.module.css';
 
-import { Button } from '../Button';
-import { Display } from '../Display';
+import { Button } from './Button';
+import { Display } from './Display';
 import { useState } from 'react';
 
 const OPERATIONS = ['+', '-', '/', 'x'];
